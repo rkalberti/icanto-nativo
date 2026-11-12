@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#183b30" />
+    <meta name="description" content="Instituto Canto Nativo: proteção, cuidado e reabilitação de aves. Conheça a causa e a loja que ajuda a sustentar o viveiro." />
+    <title>Instituto Canto Nativo — cada asa merece um recomeço</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/icons/favicon.png" />
+    <link rel="preload" as="image" href="/assets/hero-tucano.jpg" fetchpriority="high" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
+    <script src="/app.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Instituto Canto Nativo — início">
+        <img class="brand__mark" src="/assets/logo-beija-flor.png" alt="" aria-hidden="true" />
+        <span class="brand__wordmark"><span>Instituto</span><strong>Canto Nativo</strong></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#instituto">O instituto</a>
+        <a href="#aves">As aves</a>
+        <a href="#loja">Loja</a>
+        <a href="#como-ajudar">Como ajudar</a>
+        <div class="site-nav__mobile-actions">
+          <button class="text-button" type="button" data-open-auth="login" data-auth-guest>Entrar</button>
+          <button class="button button--small" type="button" data-open-auth="signup" data-auth-guest>Cadastrar</button>
+          <span class="user-status" data-authenticated hidden>Olá, <strong data-user-name></strong></span>
+          <button class="text-button" type="button" data-logout data-authenticated hidden>Sair</button>
+          <button class="text-button install-button" type="button">Instalar app</button>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="install-button install-button--desktop" type="button" aria-label="Instalar aplicativo">Instalar app</button>
+        <button class="text-button" type="button" data-open-auth="login" data-auth-guest>Entrar</button>
+        <button class="button button--small" type="button" data-open-auth="signup" data-auth-guest>Cadastrar</button>
+        <span class="user-status" data-authenticated hidden>Olá, <strong data-user-name></strong></span>
+        <button class="text-button" type="button" data-logout data-authenticated hidden>Sair</button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="heroTitle">
+        <img class="hero__image" src="/assets/hero-tucano.jpg" alt="Tucano pousado em um galho entre as folhas da Mata Atlântica" fetchpriority="high" />
+        <div class="hero__shade"></div>
+        <div class="hero__content page-wrap">
+          <p class="eyebrow eyebrow--light">Proteção • cuidado • liberdade</p>
+          <h1 id="heroTitle">Toda ave merece<br />uma nova chance.</h1>
+          <p class="hero__intro">Cuidamos, reabilitamos e devolvemos aves silvestres à natureza.</p>
+          <div class="hero__actions">
+            <a class="button button--sage" href="#loja">Ajude a proteger <span aria-hidden="true">→</span></a>
+            <a class="underlined-link underlined-link--light" href="#instituto">Conheça o instituto</a>
+          </div>
+          <p class="hero__signature">Natureza hoje,<br />mais vida sempre</p>
+        </div>
+        <a class="hero__side-note" href="#aves" aria-label="Conheça nosso trabalho">
+          <span>Mais aves</span><span>Mais florestas</span><span>Um amanhã mais vivo</span>
+        </a>
+      </section>
+
+      <section class="care-section section-pad" id="instituto" aria-labelledby="careTitle">
+        <div class="page-wrap">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Instituto Canto Nativo</p>
+              <h2 id="careTitle">Cuidado que prepara para voar</h2>
+            </div>
+            <p class="section-heading__aside">Do acolhimento à reabilitação, cada etapa é um passo de volta para a natureza.</p>
+          </div>
+          <div class="care-grid" id="aves">
+            <article class="care-card">
+              <div class="care-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 39S7 29 7 17a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 12-17 22-17 22Z" /></svg></div>
+              <p class="eyebrow">01 — acolher</p>
+              <h3>Um primeiro respiro</h3>
+              <p>Um espaço seguro para receber aves e iniciar uma jornada de cuidado.</p>
+            </article>
+            <article class="care-card">
+              <div class="care-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 35c8-1 13-5 16-12 3 7 8 11 16 12M24 23V9m0 7c-7 0-11-4-12-10 7 0 11 3 12 10Zm0-3c1-6 5-9 12-9-1 6-5 10-12 11" /></svg></div>
+              <p class="eyebrow">02 — reabilitar</p>
+              <h3>Força para seguir</h3>
+              <p>Tempo, atenção e cuidado para que cada ave recupere suas habilidades.</p>
+            </article>
+            <article class="care-card">
+              <div class="care-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 30c6-10 13-13 21-9 6-1 10-4 14-9-1 12-8 20-19 20-5 0-10 0-16-2Zm0 0 12 1m1-10-5-8m6 7 2-10" /></svg></div>
+              <p class="eyebrow">03 — libertar</p>
+              <h3>O caminho de volta</h3>
+              <p>Quando chega a hora, o destino é o céu aberto e a vida em liberdade.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section section-pad" id="loja" aria-labelledby="shopTitle">
+        <div class="page-wrap">
+          <div class="shop-intro">
+            <div>
+              <p class="eyebrow">Vista a causa</p>
+              <h2 id="shopTitle">Loja que sustenta<br />o viveiro.</h2>
+            </div>
+            <div class="shop-intro__copy">
+              <p>As vendas da loja ajudam a sustentar o viveiro e o cuidado com as aves. Cada camiseta leva a causa um pouco mais longe.</p>
+              <span class="shop-note"><span class="shop-note__dot"></span> A vitrine está sendo preparada</span>
+            </div>
+          </div>
+
+          <div class="product-grid" aria-label="Espaços reservados para camisetas">
+            <article class="product-card">
+              <div class="product-photo" role="img" aria-label="Espaço reservado para a foto da camiseta número um">
+                <svg class="shirt-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="m40 22 20-8 20 8 20 17-12 15-10-7v49H42V47l-10 7-12-15 20-17Z" /><path d="M48 18c2 8 7 12 12 12s10-4 12-12" /></svg>
+                <span>Espaço reservado para foto</span>
+              </div>
+              <div class="product-card__info"><div><p class="eyebrow">Camiseta</p><h3>Foto em breve</h3></div><button class="round-arrow" type="button" data-product-notice aria-label="Aviso sobre a camiseta">↗</button></div>
+            </article>
+            <article class="product-card">
+              <div class="product-photo product-photo--warm" role="img" aria-label="Espaço reservado para a foto da camiseta número dois">
+                <svg class="shirt-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="m40 22 20-8 20 8 20 17-12 15-10-7v49H42V47l-10 7-12-15 20-17Z" /><path d="M48 18c2 8 7 12 12 12s10-4 12-12" /></svg>
+                <span>Espaço reservado para foto</span>
+              </div>
+              <div class="product-card__info"><div><p class="eyebrow">Camiseta</p><h3>Foto em breve</h3></div><button class="round-arrow" type="button" data-product-notice aria-label="Aviso sobre a camiseta">↗</button></div>
+            </article>
+            <article class="product-card">
+              <div class="product-photo product-photo--sage" role="img" aria-label="Espaço reservado para a foto da camiseta número três">
+                <svg class="shirt-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="m40 22 20-8 20 8 20 17-12 15-10-7v49H42V47l-10 7-12-15 20-17Z" /><path d="M48 18c2 8 7 12 12 12s10-4 12-12" /></svg>
+                <span>Espaço reservado para foto</span>
+              </div>
+              <div class="product-card__info"><div><p class="eyebrow">Camiseta</p><h3>Foto em breve</h3></div><button class="round-arrow" type="button" data-product-notice aria-label="Aviso sobre a camiseta">↗</button></div>
+            </article>
+          </div>
+          <p class="shop-footnote">Modelos, imagens e informações de compra serão incluídos pelo Instituto quando estiverem disponíveis.</p>
+        </div>
+      </section>
+
+      <section class="closing-section section-pad" id="como-ajudar" aria-labelledby="closingTitle">
+        <div class="page-wrap closing-panel">
+          <div class="closing-panel__leaf" aria-hidden="true">✳</div>
+          <p class="eyebrow eyebrow--light">Uma causa que ganha asas</p>
+          <h2 id="closingTitle">Seu apoio ajuda<br />a natureza a seguir.</h2>
+          <p>Conheça a loja do Instituto Canto Nativo e acompanhe o trabalho de proteção às aves.</p>
+          <a class="button button--cream" href="#loja">Conheça a loja <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="#inicio" aria-label="Instituto Canto Nativo — voltar ao início">
+        <img class="brand__mark" src="/assets/logo-beija-flor.png" alt="" aria-hidden="true" />
+        <span class="brand__wordmark"><span>Instituto</span><strong>Canto Nativo</strong></span>
+      </a>
+      <p>Proteção, cuidado e liberdade para as aves.</p>
+      <a href="#inicio" class="footer-top">Voltar ao início ↑</a>
+    </footer>
+
+    <dialog class="auth-dialog" id="authDialog" aria-labelledby="authTitle">
+      <button class="dialog-close" type="button" aria-label="Fechar janela">×</button>
+      <p class="eyebrow">Instituto Canto Nativo</p>
+      <h2 id="authTitle">Entre na nossa roda.</h2>
+      <div class="auth-tabs" role="tablist" aria-label="Acesso à conta">
+        <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" data-auth-tab="login">Entrar</button>
+        <button class="auth-tab" type="button" role="tab" aria-selected="false" data-auth-tab="signup">Cadastrar</button>
+      </div>
+      <form class="auth-form" id="loginForm" data-auth-form="login">
+        <label for="loginEmail">E-mail</label><input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="254" required />
+        <label for="loginPassword">Senha</label><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" maxlength="128" required />
+        <button class="button auth-submit" type="submit">Entrar</button>
+      </form>
+      <form class="auth-form" id="signupForm" data-auth-form="signup" hidden>
+        <label for="signupName">Nome</label><input id="signupName" name="name" type="text" autocomplete="name" placeholder="Seu nome" minlength="2" maxlength="100" required />
+        <label for="signupEmail">E-mail</label><input id="signupEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="254" required />
+        <label for="signupPassword">Senha</label><input id="signupPassword" name="password" type="password" autocomplete="new-password" placeholder="Crie uma senha" minlength="8" maxlength="128" required />
+        <button class="button auth-submit" type="submit">Criar cadastro</button>
+      </form>
+      <p class="auth-disclaimer" id="authMessage" aria-live="polite">As senhas são armazenadas em formato protegido, nunca em texto puro.</p>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

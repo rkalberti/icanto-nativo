@@ -1,0 +1,15 @@
+{
+  "name": "instituto-canto-nativo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.9",
+  "description": "Site PWA responsivo do Instituto Canto Nativo",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node scripts/build-check.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

@@ -1,0 +1,14 @@
+# Entregas — Instituto Canto Nativo
+
+- [x] **Site institucional no visual aprovado:** desenvolver uma aplicação Web com interface responsiva e prioridade mobile-first; manter o visual do mockup 1 (composição editorial, marfim, verde-floresta, tipografia serifada e tucano em destaque); apresentar o Instituto Canto Nativo, sua missão e o trabalho de proteção e reabilitação de aves.
+- [x] **Responsividade mobile-first:** adaptar cabeçalho, hero, cartões de cuidado e loja para telas de smartphone, mantendo leitura e navegação utilizáveis em telas menores.
+- [x] **Logo do Instituto:** substituir a marca original pelo beija-flor enviado pelo usuário no cabeçalho, rodapé, favicon e ícones instaláveis do PWA.
+- [x] **Vitrine de camisetas e financiamento do viveiro:** comunicar que as vendas da loja ajudam a sustentar o viveiro; exibir uma vitrine de camisetas com espaços reservados para inclusão posterior de fotos reais, sem inventar produtos ou fotos da ONG.
+- [x] **Navegação e acesso de usuário:** incluir no cabeçalho opções para Loja, Entrar e Cadastrar; cadastro, login, manutenção da sessão e logout são conectados à API local. As senhas não são devolvidas pela API nem guardadas em texto puro.
+- [x] **PWA instalável:** configurar manifest.json e service worker, disponibilizar recursos básicos para instalação e cache e assegurar boa usabilidade em smartphones. O service worker não armazena respostas privadas de `/api/`.
+- [ ] **GitHub e Render.com:** disponibilizar o código-fonte no GitHub e publicar a aplicação no Render.com por meio do GitHub.
+- [x] **Entrega e acessibilidade de uso:** entregar o site em condição de uso nos tamanhos de tela previstos e identificar claramente qualquer dependência ou etapa externa que impeça concluir a publicação solicitada.
+- [x] **Cadastro e login persistentes para desenvolvimento local:** criar API para cadastro com nome, e-mail e senha; validar os campos, impedir e-mails duplicados e guardar a senha somente em hash; permitir login, sessão e logout sem enviar ou devolver a senha.
+- [x] **SQLite acessível pelo VS Code:** criar automaticamente um arquivo SQLite local com tabelas de usuários e sessões, fornecer o esquema SQL e instruções para abrir o arquivo no Database Client; excluir os dados locais do controle de versão.
+- [x] **Testes no Rapid API Client e integração do site:** documentar requisições para saúde da API, cadastro, login, sessão atual e logout; ligar os formulários Entrar/Cadastrar do site à API, manter a sessão entre acessos e exibir erros de validação.
+- [x] **Execução e escopo local:** instruir como rodar a aplicação no VS Code e declarar a versão de Node necessária; deixar claro que o arquivo SQLite local não é um banco persistente adequado para publicar em Render sem configurar armazenamento de produção.

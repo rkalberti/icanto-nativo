@@ -1,0 +1,210 @@
+openapi: 3.0.3
+info:
+  title: API do Instituto Canto Nativo
+  version: 1.0.0
+  description: API local de cadastro, login e sessão. Testar com o servidor em http://localhost:3000.
+servers:
+  - url: http://localhost:3000
+    description: Desenvolvimento local no VS Code
+paths:
+  /api/health:
+    get:
+      operationId: healthCheck
+      summary: Verificar se a API e o banco SQLite estão ativos
+      responses:
+        '200':
+          description: API pronta
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, example: true }
+                  status: { type: string, example: ok }
+                  database: { type: string, example: ok }
+  /api/auth/register:
+    post:
+      operationId: register
+      summary: Criar cadastro e iniciar sessão
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+            example:
+              name: Ana Silva
+              email: ana@example.com
+              password: minha-senha-123
+      responses:
+        '201':
+          description: Cadastro criado; a resposta também define o cookie canto_nativo_session.
+          headers:
+            Set-Cookie:
+              description: Cookie de sessão HttpOnly.
+              schema: { type: string }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '400':
+          description: Nome, e-mail, senha ou JSON inválido.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '409':
+          description: Este e-mail já possui cadastro.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '413':
+          description: O corpo da solicitação excedeu 16 KB.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '415':
+          description: O corpo precisa usar Content-Type application/json.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+  /api/auth/login:
+    post:
+      operationId: login
+      summary: Entrar com e-mail e senha
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+            example:
+              email: ana@example.com
+              password: minha-senha-123
+      responses:
+        '200':
+          description: Login aceito; a resposta também define o cookie canto_nativo_session.
+          headers:
+            Set-Cookie:
+              description: Cookie de sessão HttpOnly.
+              schema: { type: string }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '401':
+          description: E-mail ou senha incorretos.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '400':
+          description: JSON inválido, campo não suportado ou senha longa demais.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '413':
+          description: O corpo da solicitação excedeu 16 KB.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '415':
+          description: O corpo precisa usar Content-Type application/json.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+  /api/me:
+    get:
+      operationId: currentUser
+      summary: Consultar a sessão e o usuário autenticado
+      security:
+        - SessionCookie: []
+      responses:
+        '200':
+          description: Sessão válida.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '401':
+          description: Não há sessão válida.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+  /api/auth/logout:
+    post:
+      operationId: logout
+      summary: Encerrar a sessão atual
+      security:
+        - SessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+            example: {}
+      responses:
+        '200':
+          description: Sessão encerrada e cookie removido.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, example: true }
+                  message: { type: string, example: Você saiu da sua conta. }
+        '400':
+          description: Corpo JSON inválido ou campo não suportado.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '415':
+          description: O corpo precisa usar Content-Type application/json.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '413':
+          description: O corpo da solicitação excedeu 16 KB.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+components:
+  securitySchemes:
+    SessionCookie:
+      type: apiKey
+      in: cookie
+      name: canto_nativo_session
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [name, email, password]
+      additionalProperties: false
+      properties:
+        name: { type: string, minLength: 2, maxLength: 100 }
+        email: { type: string, format: email, maxLength: 254 }
+        password: { type: string, minLength: 8, maxLength: 128, writeOnly: true }
+    LoginRequest:
+      type: object
+      required: [email, password]
+      additionalProperties: false
+      properties:
+        email: { type: string, format: email, maxLength: 254 }
+        password: { type: string, maxLength: 128, writeOnly: true }
+    User:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: Ana Silva }
+        email: { type: string, format: email, example: ana@example.com }
+        createdAt: { type: string, format: date-time }
+    AuthResponse:
+      type: object
+      properties:
+        ok: { type: boolean, example: true }
+        user: { $ref: '#/components/schemas/User' }
+    ErrorResponse:
+      type: object
+      properties:
+        ok: { type: boolean, example: false }
+        error:
+          type: object
+          properties:
+            code: { type: string, example: invalid_email }
+            message: { type: string, example: Informe um endereço de e-mail válido. }

@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: instituto-canto-nativo
+    runtime: node
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
