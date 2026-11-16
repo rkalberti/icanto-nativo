@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Marca do Instituto Canto Nativo">
+  <rect width="64" height="64" rx="16" fill="#183b30"/>
+  <path d="M11 40c10-15 21-21 36-18-3 8-8 14-16 18 8 0 14-3 20-8-3 14-17 21-32 16l-7 5 2-9-3-4Z" fill="#f5f2e9"/>
+  <path d="M39 22c8-4 14-4 20 0-7 5-13 8-22 8 2-3 3-5 2-8Z" fill="#c78a45"/>
+  <path d="M15 49c10-2 19-7 26-15" fill="none" stroke="#183b30" stroke-linecap="round" stroke-width="2.6"/>
+</svg>
